@@ -19,8 +19,8 @@ namespace DotNetAstGen
             var span = node.SyntaxTree.GetLineSpan(node.Span);
             return new SyntaxMetaData(
                 $"ast.{node.Kind()}",
-                span.StartLinePosition.Line,
-                span.EndLinePosition.Line,
+                span.StartLinePosition.Line + 1,
+                span.EndLinePosition.Line + 1,
                 span.StartLinePosition.Character,
                 span.EndLinePosition.Character,
                 node.WithoutTrivia().ToFullString().Trim()
