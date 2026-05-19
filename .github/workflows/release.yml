@@ -7,6 +7,9 @@ on:
     tags: ["*"]
     paths-ignore: ['**.md']
 
+permissions:
+  contents: write
+
 concurrency: production
 
 jobs:
@@ -70,3 +73,5 @@ jobs:
             dotnetastgen-linux-arm64
             dotnetastgen-macos
             dotnetastgen-win.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
